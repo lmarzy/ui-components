@@ -1,0 +1,44 @@
+// G-UTILITIES - Visibility
+
+@if $u-visibility {
+
+  .is-visible {
+    display: block !important;
+  }
+  .is-hidden {
+    display: none !important;
+  }
+  .is-vh {
+    @include vh;
+  }
+
+  @media only screen {
+    .hide-default, .hide-default-up {
+      display: none;
+    }
+  }
+  $mapKeys: prepend(map-keys($breakpoints), "default");
+  $i: 1;
+
+  @each $bp, $query in $breakpoints {
+    @include bp($bp) {
+      @if (nth($mapKeys, $i) == "default") {
+        .hide-#{nth($mapKeys,$i)} {
+          display: inherit;
+        }
+      }
+
+      @else {
+        .hide-bp#{nth($mapKeys,$i)} {
+          display: inherit;
+        }
+      }
+      .hide-bp#{$bp},
+      .hide-bp#{$bp}-up {
+        display: none;
+      }
+    }
+    $i: $i + 1;
+  }// END @each
+
+}//end if $u-visibility

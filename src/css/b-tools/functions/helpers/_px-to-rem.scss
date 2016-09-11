@@ -1,0 +1,10 @@
+// B-TOOLS/FUNCTIONS/HELPERS - px to rem conversion
+
+// usage
+// rem(24px);
+
+@function rem($px-size) {
+  $rem-size: $px-size / $font-size-px;
+
+  @return #{$rem-size}rem;
+}

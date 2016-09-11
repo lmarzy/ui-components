@@ -1,0 +1,14 @@
+// D-ELEMENTS - Embedded
+
+@if $embedded {
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+}//end if $embedded 

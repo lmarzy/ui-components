@@ -1,0 +1,11 @@
+// E-OBJECTS - Container
+
+@if $o-container {
+
+  .o-container {
+    padding: 0 $rhythm / 2;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+}//end if $o-container

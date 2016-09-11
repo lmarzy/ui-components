@@ -1,0 +1,17 @@
+// GLOBAL STYLE IMPORTS
+
+@import "a-settings/_imports";
+@import "b-tools/_imports";
+@import "c-global/_imports";
+@import "d-elements/_imports";
+@import "e-objects/_imports";
+@import "f-utilities/_imports";
+
+//global components
+@import "../components/site-header/site-header";
+@import "../components/site-navigation/site-navigation";
+@import "../components/logo/logo";
+@import "../components/site-footer/site-footer";
+
+//page specific components
+@import "../components/buttons/buttons";

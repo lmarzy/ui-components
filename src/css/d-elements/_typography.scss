@@ -1,0 +1,43 @@
+// D-ELEMENTS - Typography
+
+@if $typeQuotes {
+
+  blockquote,
+  q {
+    quotes: none;
+  }
+
+  blockquote::before,
+  blockquote::after,
+  q::before,
+  q::after {
+    content: "";
+    content: none;
+  }
+
+}//end if $typeQuotes
+
+@if $typeStrong {
+
+  strong {
+    font-weight: bold;
+  }
+
+}//end if $typeStrong
+
+@if $typeAbbr {
+
+  abbr {
+    border-bottom: 1px dotted colour(main, borders);
+    cursor: help;
+  }
+
+}//end if $typeAbbr
+
+@if $typeSmall {
+
+  small {
+    font-size: 80%;
+  }
+
+}//end if $typeSmall

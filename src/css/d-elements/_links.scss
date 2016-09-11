@@ -1,0 +1,15 @@
+// D-ELEMENTS - Links
+
+@if $links {
+
+  a {
+    color: colour(main, links);
+    background-color: transparent;
+    text-decoration: none;
+    &:active,
+    &:hover {
+      outline: none;
+    }
+  }
+
+}//end if $links

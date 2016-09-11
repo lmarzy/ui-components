@@ -1,0 +1,10 @@
+{
+
+	"metaAuthor": "Lee Marsden",
+	"siteName": "UI-Components",
+
+	"components": [
+		{ "linkName": "Tabs", "linkUrl": "/tabs.html" }
+	]
+
+}

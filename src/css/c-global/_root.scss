@@ -1,0 +1,15 @@
+// B-GLOBAL/ROOT - Root site styles
+
+html {
+  font-size: $font-size;
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

@@ -1,0 +1,11 @@
+// D-ELEMENTS - Headings
+
+@if $headings {
+
+  h1, h2, h3, h4 {
+    font-family: $heading-font-family;
+    font-size: inherit;
+    font-weight: $heading-font-weight;
+  }
+
+}//end if $headings

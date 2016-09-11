@@ -1,0 +1,6 @@
+{% macro btnAnchor(url, text, classExtenders) %}
+    <a href="{{ url }}" class="c-btn {{ classExtenders }}">{{ text }}</a>
+{% endmacro %}
+{% macro btn(text, classExtenders) %}
+    <button type="button" class="c-btn {{ classExtenders }}>">{{ text }}</button>
+{% endmacro %}

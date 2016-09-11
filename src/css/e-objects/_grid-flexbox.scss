@@ -1,0 +1,15 @@
+// E-OBJECTS - Grid flexbox
+
+@if $o-grid-flexbox {
+
+  .o-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutter;
+
+    &__item {
+      padding-left: $gutter;
+    }
+  }
+
+}//end if $o-grid

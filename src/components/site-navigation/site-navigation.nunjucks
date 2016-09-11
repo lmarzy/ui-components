@@ -1,0 +1,11 @@
+<nav class="c-siteNav">
+
+	<h1 class="is-vh">Site navigation</h1>
+
+	<ul>
+		{% for links in siteNav %}
+			<li class="c-siteNav__item"><a href="{{ links.linkUrl }}">{{ links.linkName }}</a></li>
+		{% endfor %}
+	</ul>
+
+</nav>

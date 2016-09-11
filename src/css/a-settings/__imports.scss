@@ -1,0 +1,19 @@
+// IMPORT - a-Settings
+
+//variables
+@import "variables/global";
+@import "variables/typography";
+@import "variables/inputs";
+@import "variables/buttons";
+@import "variables/spacings";
+@import "variables/paths";
+@import "variables/imports";
+@import "variables/misc";
+
+@if variable-exists(font-url) {
+  @import url($font-url);
+}
+
+//maps
+@import "maps/colours";
+@import "maps/breakpoints";

@@ -1,0 +1,16 @@
+// E-OBJECTS - Grid float
+
+@if $o-grid-float {
+
+  .o-grid {
+    margin-left: -$gutter;
+
+    @include cf;
+
+    &__item {
+      float: left;
+      padding-left: $gutter;
+    }
+  }
+
+}//end if $o-grid

@@ -1,0 +1,13 @@
+// G-UTILITIES - Widths-flexbox
+
+@if $u-widths-flexbox {
+
+  @include widths-flexbox("u");
+
+  @each $bp, $value in $breakpoints {
+    @include bp($bp) {
+      @include widths-flexbox("u-bp" + $bp);
+    }
+  }
+
+}//end if $widths-flexbox

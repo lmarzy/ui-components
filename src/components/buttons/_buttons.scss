@@ -1,0 +1,41 @@
+// COMPONENTS - Buttons
+
+.c-btn {
+  display: inline-block;
+  height: em($btn-height);
+  padding: 0 em($btn-padding);
+  vertical-align: middle;
+  font: inherit;
+  line-height: em($btn-height);
+  text-align: $btn-text-align;
+  @if variable-exists(btn-border-width) {
+    border: $btn-border-width $btn-border-style $btn-border-colour;
+  }
+  @else {
+    border: none;
+  }
+
+    // modifiers
+    &-a {
+
+    }
+
+    // size changes
+    &-small {
+      font-size: em($btn-small);
+    }
+    &-large {
+      font-size: em($btn-large);
+    }
+
+    // disabled
+    button[disabled],
+    .c-btn-disabled {
+      opacity: 0.4;
+      cursor: default;
+
+        &:hover {
+          opacity: 0.4;
+        }
+    }
+}

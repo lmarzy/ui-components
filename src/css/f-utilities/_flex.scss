@@ -1,0 +1,47 @@
+// G-UTILITIES - Flex
+
+@if $u-flexbox {
+
+  .u-flex {
+    display: flex; //container property
+  }
+
+  .u-flex-col {
+    flex-direction: column; //container property
+  }
+
+  .u-flex-rowRev {
+    flex-direction: row-reverse; //container property
+  }
+  .u-flex-colRev {
+    flex-direction: column-reverse; //container property
+  }
+
+  .u-flex-grow1 {
+    flex: 1; //child items
+  }
+
+  .u-flex-end {
+    justify-content: flex-end; //container property
+  }
+  .u-flex-center {
+    justify-content: center; //container property
+  }
+  .u-flex-spaceBetween {
+    justify-content: space-between;; //container property
+  }
+  .u-flex-spaceAround {
+    justify-content: space-around;; //container property
+  }
+
+  .u-flex-start {
+    align-items: flex-start; //container property
+  }
+  .u-flex-end {
+    align-items: flex-end; //container property
+  }
+  .u-flex-center {
+    align-items: center; //container property
+  }
+
+}//end if $colours

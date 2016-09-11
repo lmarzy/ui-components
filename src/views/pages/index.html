@@ -1,0 +1,20 @@
+---
+title: UI-Components - Home
+desc: Needs updating
+pageId: js-index
+pageClass: c-indexPage
+pageCss: index
+---
+
+{% extends "default.html" %}
+
+{% block icons %}
+  {% include "icons-index.nunjucks" %}
+{% endblock %}
+
+{% block content %}
+
+  {% import "buttons.nunjucks" as buttons %}
+  {{ buttons.btnAnchor('http://google.co.uk', 'button', 'c-btn-a') }}
+
+{% endblock %}
