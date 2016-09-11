@@ -1,6 +1,10 @@
 <header class="c-siteHeader">
 
-  {% include "logo.nunjucks" %}
+  <div class="o-container">
+
+    {% include "logo.nunjucks" %}
+    
+  </div>
 
 </header>
 <!-- !END header.c-siteHeader -->

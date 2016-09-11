@@ -4,6 +4,16 @@ desc: Needs updating
 pageId: js-index
 pageClass: c-indexPage
 pageCss: index
+componentList: [
+{
+  name: 'Tabs',
+  url: '/tabs.html'
+},
+{
+  name: 'Tabs',
+  url: '/tabs.html'
+}
+]
 ---
 
 {% extends "default.html" %}
@@ -14,7 +24,11 @@ pageCss: index
 
 {% block content %}
 
-  {% import "buttons.nunjucks" as buttons %}
-  {{ buttons.btnAnchor('http://google.co.uk', 'button', 'c-btn-a') }}
+  <div class="o-container">
+    {% include "component-list.nunjucks" %}
+  </div>
+
+  <!-- {% import "buttons.nunjucks" as buttons %}
+  {{ buttons.btnAnchor('http://google.co.uk', 'button', 'c-btn-a') }} -->
 
 {% endblock %}

@@ -3,14 +3,16 @@
 $colours: (
 
   main: (
-    bg 						: hsl(60, 2%, 92%),
-    text 			 		: hsl(199, 20%, 37%),
-    links 				: inherit,
-    borders 		  : hsl(10, 2%, 10%)
+    bg 						: white,
+    text 			 		: #7B7B7B,
+    links 				: #22D2B2,
+    borders 		  : #EAEAEA
   ),
 
   brand: (
-    a 						: hsl(187, 99%, 45%)
+    a 						: #22D2B2,
+    b             : #EBEBEB,
+    c             : #4C4C4C
   ),
 
   alerts: (

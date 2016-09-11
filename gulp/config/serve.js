@@ -15,7 +15,7 @@ export const config = {
       task: 'views'
     },
     css: {
-      src: [`${path.src}/styles/**`, `${path.src}/components/**`],
+      src: [`${path.src}/css/**`, `${path.src}/components/**`],
       task: 'css'
     },
     js: {

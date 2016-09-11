@@ -1,0 +1,36 @@
+// COMPONENT - Component wrap
+
+.c-componentList {
+  display: flex;
+  flex-flow: wrap;
+  margin-left: -$gutter;
+  padding-top: $rhythm * 2;
+  padding-bottom: $rhythm * 2;
+
+    &_item {
+      flex: 1 0 200px;
+      margin-bottom: $rhythm;
+      margin-left: $gutter;
+    }
+    &_link {
+      display: block;
+      @include vr(20px, 10, 0);
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: colour(brand, a);
+      background: colour(brand, b);
+      cursor: pointer;
+      transition: all ease-in $transition-duration;
+
+        &:hover {
+          background: colour(brand, c);
+          color: white;
+        }
+    }
+
+    @include bp(10) {
+      padding-top: $rhythm * 3;
+      padding-bottom: $rhythm * 3;
+    }
+}

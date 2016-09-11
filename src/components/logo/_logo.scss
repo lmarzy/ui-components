@@ -1,4 +1,22 @@
 // COMPONENT - Logo
 
+@keyframes fadeSpin {
+  0%    { opacity: 0; transform: scale(0.2) rotate(-760deg); }
+  100%  { opacity: 1; transform: scale(1) rotate(0); }
+}
+
 .c-logo {
+  @include vr(20px, 3, 0);
+  text-transform: uppercase;
+  border-bottom: 1px solid colour(main, borders);
+
+    &_hyphen {
+      display: inline-block;
+      color: colour(brand, a);
+      animation: fadeSpin 1600ms ease;
+    }
+    &_last {
+      color: darken(colour(main, text),15);
+      font-weight: 700;
+    }
 }

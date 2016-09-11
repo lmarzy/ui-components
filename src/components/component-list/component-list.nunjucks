@@ -1,0 +1,7 @@
+<ul class="c-componentList">
+  {% for item in componentList %}
+  <li class="c-componentList_item">
+    <a href="{{ item.url }}" class="c-componentList_link">{{ item.name }}</a>
+  </li>
+  {% endfor %}
+</ul>

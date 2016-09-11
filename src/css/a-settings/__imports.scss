@@ -10,10 +10,6 @@
 @import "variables/imports";
 @import "variables/misc";
 
-@if variable-exists(font-url) {
-  @import url($font-url);
-}
-
 //maps
 @import "maps/colours";
 @import "maps/breakpoints";

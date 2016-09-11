@@ -1,5 +1,9 @@
 <footer class="c-siteFooter">
 
-  <small class="c-copyright">&copy;</small>
+  <div class="o-container">
+
+    <small class="c-copyright">&copy; UI-Components</small>
+    
+  </div>
 
 </footer> <!-- !END footer.c-siteFooter -->

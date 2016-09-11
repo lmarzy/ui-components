@@ -1,4 +1,10 @@
 // COMPONENT - Site-footer
 
 .c-siteFooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: rem(12px) $gutter / 2;
+  color: colour(brand, b);
+  background: colour(brand, c);
 }

@@ -1,4 +1,9 @@
 // COMPONENT - Site-header
 
 .c-siteHeader {
+  text-align: center;
+
+    @include bp(10) {
+      text-align: left;
+    }
 }

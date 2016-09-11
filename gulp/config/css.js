@@ -10,7 +10,7 @@ import postCssNano    from 'cssnano';
 import { path } from './_global';
 
 export const config = {
-  src: `${path.src}/css/global.scss`,
+  src: `${path.src}/css/{global,index}.scss`,
   uncssGlob: `${path.dev}/**/*.html`,
   uncssIgnore: [''],
   mapWrite: './map',

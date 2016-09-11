@@ -14,7 +14,9 @@ export const config = {
       `${path.src}/components/logo`,
       `${path.src}/components/site-navigation`,
       `${path.src}/components/site-footer`,
-      `${path.src}/components/buttons`
+      `${path.src}/components/buttons`,
+      `${path.src}/components/component-wrap`,
+      `${path.src}/components/component-list`
     ],
     data: `${path.src}/views/global.json`,
     dest: path.dev

@@ -1,7 +1,7 @@
 // A-SETTINGS/VARIABLES - Paths
 
 // elements
-$headings   				  : false;
+$headings   				  : true;
 $typeQuotes           : false;
 $typeStrong           : false;
 $typeAbbr             : false;
@@ -9,18 +9,18 @@ $typeSmall            : false;
 $forms                : false;
 $inputs 						  : false;
 $links  						  : false;
-$lists 			 				  : false;
+$lists 			 				  : true;
 $embedded 					  : false;
 $tables 						  : false;
 
 // objects
-$o-container 				  : false;
-$o-grid-flexbox 			: false;
+$o-container 				  : true;
+$o-grid-flexbox 			: true;
 $o-grid-float    			: false;
 
 // utilities/helpers
 $u-widths-flexbox     : false;
 $u-colours 		        : false;
 $u-visibility 	      : false;
-$u-spacings           : false;
+$u-spacings           : true;
 $u-flexbox            : false;

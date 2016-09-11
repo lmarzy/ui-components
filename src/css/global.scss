@@ -1,5 +1,7 @@
 // GLOBAL STYLE IMPORTS
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
 @import "a-settings/_imports";
 @import "b-tools/_imports";
 @import "c-global/_imports";
@@ -15,3 +17,4 @@
 
 //page specific components
 @import "../components/buttons/buttons";
+@import "../components/component-wrap/component-wrap";

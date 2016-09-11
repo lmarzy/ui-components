@@ -1,1 +1,3 @@
-<h1 class="c-logo">{{ siteName }}</h1>
+<h1 class="c-logo">
+  <span class="c-logo_first">UI</span><span class="c-logo_hyphen">-</span><span class="c-logo_last">Components</span>
+</h1>
