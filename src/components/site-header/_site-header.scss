@@ -1,9 +1,11 @@
 // COMPONENT - Site-header
 
 .c-siteHeader {
+  margin-bottom: $rhythm * 2;
   text-align: center;
 
     @include bp(10) {
+      margin-bottom: $rhythm * 3;
       text-align: left;
     }
 }

@@ -1,0 +1,17 @@
+{% macro tabComponent(id, classExtender, tabs) %}
+<div id="js-{{ id }}" class="c-tabs c-tabs-{{ classExtender }}">
+  <ul class="c-tabs_list" role="tablist">
+    {% for tab in tabs %}
+    <li class="c-tabs_tab">
+      <a id="tab1" class="js-tabLink c-tabs_link {% if tab.isActive %}isActive{% endif %}" role="tab" tabindex="0" aria-selected="true">{{ tab.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% for item in tabs %}
+  <section class="js-tabContent c-tabs_content {% if item.isActive %}isActive{% endif %}" role="tabpanel" aria-labelledby="tab1">
+    <h2 class="c-tabs_contentTitle">{{ item.name }}</h2>
+    <p>{{ item.content }}</p>
+  </section>
+  {% endfor %}
+</div>
+{% endmacro %}

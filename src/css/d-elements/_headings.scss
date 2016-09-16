@@ -8,4 +8,9 @@
     font-weight: $heading-font-weight;
   }
 
+  h2 {
+    @include vr(18px, 1, 1);
+    text-transform: uppercase;
+  }
+
 }//end if $headings

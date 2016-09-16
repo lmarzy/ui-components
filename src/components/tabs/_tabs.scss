@@ -1,0 +1,58 @@
+// COMPONENT - Tabs
+
+.c-tabs {
+  &_list {
+    display: flex;
+  }
+  &_tab {
+    flex: 1;
+  }
+  &_link {
+    display: block;
+    @include vr(18px, 2, 0);
+    text-align: center;
+    cursor: pointer;
+  }
+  &_content {
+    display: none;
+    padding: $rhythm $gutter;
+
+      &.isActive {
+        display: block;
+      }
+  }
+  &_contentTitle {
+    display: none;
+  }
+
+  // styles for JavaScript being disabled
+  .no-js & {
+    &_list {
+      display: none;
+    }
+    &_content, &_contentTitle {
+      display: block;
+    }
+    &_content {
+      margin-bottom: $rhythm;
+    }
+  }
+
+  &-component {
+    border: 1px solid colour(brand, b);
+
+    .c-tabs_tab:not(:last-child) {
+      border-right: 1px solid colour(brand, b);
+    }
+    .c-tabs_link {
+      background: lighten(colour(brand, b),5);
+
+        &.isActive, &:hover {
+          background: colour(brand, b);
+        }
+    }
+   .c-tabs_content {
+     background: colour(brand, b);
+   }
+  }
+}
