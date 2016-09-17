@@ -41,8 +41,9 @@ export default (el) => {
 
   // OpenTab Focus function
   const openTabFocus = (index, e) => {
-    let newNo = -1;
-    let count = $tabLinks.length;
+    let newNo = -1,
+        count = $tabLinks.length;
+
     const maxNo = $tabLinks.length - 1;
 
     if (e.keyCode === 37) { // left arrow
