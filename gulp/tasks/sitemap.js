@@ -4,7 +4,8 @@
 
 import gulp     from 'gulp';
 import sitemap  from 'gulp-sitemap';
-import config   from '../config/sitemap';
+
+import { config }  from '../config/sitemap';
 
 gulp.task('sitemap', () => {
 
