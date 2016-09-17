@@ -38,21 +38,44 @@
     }
   }
 
+  // Component styles
   &-component {
-    border: 1px solid colour(brand, b);
+    border: 1px solid darken(colour(brand, b),8);
 
     .c-tabs_tab:not(:last-child) {
-      border-right: 1px solid colour(brand, b);
+      border-right: 1px solid darken(colour(brand, b),8);
     }
     .c-tabs_link {
-      background: lighten(colour(brand, b),5);
+      background: colour(brand, b);
 
         &.isActive, &:hover {
-          background: colour(brand, b);
+          color: colour(brand, b);
+          background: colour(brand, c);
         }
     }
    .c-tabs_content {
-     background: colour(brand, b);
+     color: colour(brand, b);
+     background: colour(brand, c);
    }
   }
+
+  // Information styles
+  &-info {
+    margin-bottom: $rhythm * 2;
+
+    .c-tabs_list {
+      border-top: 1px solid colour(brand, b);
+    }
+    .c-tabs_link {
+      background: lighten(colour(brand, b),6);
+      border-right: 1px solid colour(brand, b);
+      border-bottom: 1px solid colour(brand, b);
+
+        &.isActive, &:hover {
+          background: white;
+          border-bottom: none;
+        }
+    }
+  }
+
 }

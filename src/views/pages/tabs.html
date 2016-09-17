@@ -15,7 +15,7 @@ componentName: Tabs
 
 {% block content %}
 
-  <section class="o-container">
+  <section class="o-container u-mb3">
 
     <h2>{{ componentName }}</h1>
 
@@ -26,26 +26,50 @@ componentName: Tabs
         [
           {
             name: "Tab 1",
-            content: "Plaid sriracha pickled vice master cleanse. Kogi franzen street art, vice meggings semiotics lomo schlitz asymmetrical disrupt pinterest bicycle rights. Selfies marfa pour-over butcher, disrupt poutine yr sartorial etsy chartreuse. Pickled williamsburg food truck, plaid whatever put a bird on it man braid photo booth fap heirloom. Polaroid organic small batch 90's, gochujang celiac normcore. DIY bitters offal, gluten-free chambray mlkshk truffaut ugh chillwave bushwick chicharrones listicle polaroid pork belly. Pork belly seitan direct trade church-key ramps synth, before they sold out normcore retro sustainable street art wolf.",
+            content: "Tab 1 content...",
             isActive: true
           },
           {
             name: "Tab 2",
-            content: "Plaid sriracha pickled vice master cleanse. Kogi franzen street art, vice meggings semiotics lomo schlitz asymmetrical disrupt pinterest bicycle rights. Selfies marfa pour-over butcher, disrupt poutine yr sartorial etsy chartreuse. Pickled williamsburg food truck, plaid whatever put a bird on it man braid photo booth fap heirloom. Polaroid organic small batch 90's, gochujang celiac normcore. DIY bitters offal, gluten-free chambray mlkshk truffaut ugh chillwave bushwick chicharrones listicle polaroid pork belly. Pork belly seitan direct trade church-key ramps synth, before they sold out normcore retro sustainable street art wolf."
+            content: "Tab 2 content..."
           },
           {
             name: "Tab 3",
-            content: "Plaid sriracha pickled vice master cleanse. Kogi franzen street art, vice meggings semiotics lomo schlitz asymmetrical disrupt pinterest bicycle rights. Selfies marfa pour-over butcher, disrupt poutine yr sartorial etsy chartreuse. Pickled williamsburg food truck, plaid whatever put a bird on it man braid photo booth fap heirloom. Polaroid organic small batch 90's, gochujang celiac normcore. DIY bitters offal, gluten-free chambray mlkshk truffaut ugh chillwave bushwick chicharrones listicle polaroid pork belly. Pork belly seitan direct trade church-key ramps synth, before they sold out normcore retro sustainable street art wolf."
+            content: "Tab 3 content..."
           },
           {
             name: "Tab 4",
-            content: "Plaid sriracha pickled vice master cleanse. Kogi franzen street art, vice meggings semiotics lomo schlitz asymmetrical disrupt pinterest bicycle rights. Selfies marfa pour-over butcher, disrupt poutine yr sartorial etsy chartreuse. Pickled williamsburg food truck, plaid whatever put a bird on it man braid photo booth fap heirloom. Polaroid organic small batch 90's, gochujang celiac normcore. DIY bitters offal, gluten-free chambray mlkshk truffaut ugh chillwave bushwick chicharrones listicle polaroid pork belly. Pork belly seitan direct trade church-key ramps synth, before they sold out normcore retro sustainable street art wolf."
+            content: "Tab 4 content..."
           }
         ]
       )}}
 
-
   </section>
+
+  {% import "tabs.nunjucks" as tabs %}
+  {{ tabs.tabComponent(
+    'tabComponentInfo',
+    'info',
+    [
+      {
+        name: "Details",
+        content: "Details...",
+        isActive: true
+      },
+      {
+        name: "HTML",
+        content: "HTML..."
+      },
+      {
+        name: "CSS",
+        content: "CSS..."
+      },
+      {
+        name: "JS",
+        content: "JS..."
+      }
+    ]
+  )}}
 
 
 {% endblock %}

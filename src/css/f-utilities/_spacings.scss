@@ -5,5 +5,11 @@
   .u-mb1 {
     margin-bottom: $rhythm;
   }
+  .u-mb2 {
+    margin-bottom: $rhythm * 2;
+  }
+  .u-mb3 {
+    margin-bottom: $rhythm * 3;
+  }
 
 }//end if $u-spacings
