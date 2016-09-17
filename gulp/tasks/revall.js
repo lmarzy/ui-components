@@ -13,7 +13,8 @@ import { onError } from '../config/_global';
 
 gulp.task('revAll', () => {
     var revAll = new RevAll({
-      dontRenameFile: config.dontRename
+      dontRenameFile: config.dontRename,
+      dontUpdateReference: config.dontUpdateReference
     });
     gulp.src(config.src)
       .pipe(plumber(onError))
