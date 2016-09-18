@@ -46,11 +46,11 @@ export default (el) => {
 
     const maxNo = $tabLinks.length - 1;
 
-    if (e.keyCode === 37) { // left arrow
+    if (e.keyCode === 37 || e.keyCode === 40) { // left and down arrow
       newNo = (index === 0) ? maxNo : index - 1;
       console.log(newNo);
     }
-    if (e.keyCode === 39) { // right arrow
+    if (e.keyCode === 39 || e.keyCode === 38) { // right and up arrow
       newNo = (index === maxNo) ? 0 : index + 1;
       console.log(newNo);
     }
@@ -83,7 +83,7 @@ export default (el) => {
     $tabContent[index].removeAttribute('aria-hidden');
   };
 
-  // Call the init function to kick things off
+  // The returned function to kick things off
   return function() {
     $tabLinks.forEach((link, index) => {
       handleEvent(link, index);

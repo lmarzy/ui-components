@@ -3,15 +3,39 @@
   <ul class="c-tabs_list" role="tablist">
     {% for tab in tabs %}
     <li class="c-tabs_tab">
-      <a id="tab1" class="js-tabLink c-tabs_link {% if tab.isActive %}isActive{% endif %}" role="tab" tabindex="0" aria-selected="true">{{ tab.name }}</a>
+      <a id="tab{{ loop.index }}" class="js-tabLink c-tabs_link {% if tab.isActive %}isActive{% endif %}" role="tab" tabindex="{% if loop.index == 1 %}0{% else %}-1{% endif %}" aria-selected="{% if loop.index == 1 %}true{% else %}false{% endif %}">{{ tab.name }}</a>
     </li>
     {% endfor %}
   </ul>
   {% for item in tabs %}
-  <section class="js-tabContent c-tabs_content {% if item.isActive %}isActive{% endif %}" role="tabpanel" aria-labelledby="tab1">
+  <section class="js-tabContent c-tabs_content {% if item.isActive %}isActive{% endif %}" role="tabpanel" aria-labelledby="tab{{ loop.index }}">
     <h2 class="c-tabs_contentTitle">{{ item.name }}</h2>
-    <p>{{ item.content }}</p>
+    {% for item in item.content %}
+    <p class="u-mb1">{{ item }}</p>
+    {% endfor %}
+    {% if item.code %}
+      <pre><code>{{ item.code }}</code></pre>
+    {% endif %}
   </section>
   {% endfor %}
 </div>
 {% endmacro %}
+
+<!-- <div id="js-tabComponent" class="c-tabs c-tabs-component">
+  <ul class="c-tabs_list" role="tablist">
+    <li class="c-tabs_tab">
+      <a id="tab1" class="js-tabLink c-tabs_link isActive" role="tab" tabindex="0" aria-selected="true">Tab 1</a>
+    </li>
+    <li class="c-tabs_tab">
+      <a id="tab2" class="js-tabLink c-tabs_link " role="tab" tabindex="-1" aria-selected="false">Tab 2</a>
+    </li>
+  </ul>
+  <section class="js-tabContent c-tabs_content isActive" role="tabpanel" aria-labelledby="tab1">
+    <h2 class="c-tabs_contentTitle">Tab 1</h2>
+    <p class="u-mb1">Tab 1 content...</p>
+  </section>
+  <section class="js-tabContent c-tabs_content " role="tabpanel" aria-labelledby="tab2">
+    <h2 class="c-tabs_contentTitle">Tab 2</h2>
+    <p class="u-mb1">Tab 2 content...</p>
+  </section>
+</div> -->

@@ -26,20 +26,28 @@ componentName: Tabs
         [
           {
             name: "Tab 1",
-            content: "Tab 1 content...",
+            content: [
+              "Tab 1 content..."
+            ],
             isActive: true
           },
           {
             name: "Tab 2",
-            content: "Tab 2 content..."
+            content: [
+              "Tab 2 content..."
+            ]
           },
           {
             name: "Tab 3",
-            content: "Tab 3 content..."
+            content: [
+              "Tab 3 content..."
+            ]
           },
           {
             name: "Tab 4",
-            content: "Tab 4 content..."
+            content: [
+              "Tab 4 content..."
+            ]
           }
         ]
       )}}
@@ -53,20 +61,25 @@ componentName: Tabs
     [
       {
         name: "Details",
-        content: "Details...",
+        content: [
+          "A fully accessible tab component using basic markup, Aria attributes and JavaScript that is usable via the keyboard and mouse. All content is also viewable when JavaScript is disabled.",
+          "To interact with the component via keyboard you first tab to the first tab title and then use the left or down arrow key to move the left or the right and up arrow key to move the the right.",
+          "The tab component has been written in a modular way to allow you to have more then one tab component on the same page, all you need to do is give the component a unique id/class and when the component is called that can be passed in as the argument."
+        ],
+        linkId: tab1,
         isActive: true
       },
       {
         name: "HTML",
-        content: "HTML..."
+        code: "&lt;div id=&quot;js-tabComponent&quot; class=&quot;c-tabs c-tabs-component&quot;&gt;<br/>  &lt;ul class=&quot;c-tabs_list&quot; role=&quot;tablist&quot;&gt;<br/>    &lt;li class=&quot;c-tabs_tab&quot;&gt;<br/>      &lt;a id=&quot;tab1&quot; class=&quot;js-tabLink c-tabs_link isActive&quot; role=&quot;tab&quot; tabindex=&quot;0&quot; aria-selected=&quot;true&quot;&gt;Tab 1&lt;/a&gt;<br/>    &lt;/li&gt;<br/>    &lt;li class=&quot;c-tabs_tab&quot;&gt;<br/>      &lt;a id=&quot;tab2&quot; class=&quot;js-tabLink c-tabs_link &quot; role=&quot;tab&quot; tabindex=&quot;-1&quot; aria-selected=&quot;false&quot;&gt;Tab 2&lt;/a&gt;<br/>    &lt;/li&gt;<br/>  &lt;/ul&gt;<br/>  &lt;section class=&quot;js-tabContent c-tabs_content isActive&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;tab1&quot;&gt;<br/>    &lt;h2 class=&quot;c-tabs_contentTitle&quot;&gt;Tab 1&lt;/h2&gt;<br/>    &lt;p class=&quot;u-mb1&quot;&gt;Tab 1 content...&lt;/p&gt;<br/>  &lt;/section&gt;<br/>  &lt;section class=&quot;js-tabContent c-tabs_content &quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;tab2&quot;&gt;<br/>    &lt;h2 class=&quot;c-tabs_contentTitle&quot;&gt;Tab 2&lt;/h2&gt;<br/>    &lt;p class=&quot;u-mb1&quot;&gt;Tab 2 content...&lt;/p&gt;<br/>  &lt;/section&gt;<br/>&lt;/div&gt;"
       },
       {
         name: "CSS",
-        content: "CSS..."
+        code: ".c-tabs {<br/>  &amp;_list {<br/>    display: flex;<br/>  }<br/>  &amp;_tab {<br/>    flex: 1;<br/>  }<br/>  &amp;_link {<br/>    display: block;<br/>    cursor: pointer;<br/>  }<br/>  &amp;_content {<br/>    display: none;<br/>    padding: 12px;<br/><br/>      &amp;.isActive {<br/>        display: block;<br/>      }<br/>  }<br/>  &amp;_contentTitle {<br/>    display: none;<br/>  }<br/><br/>  // styles for JavaScript being disabled<br/>  .no-js &amp; {<br/>    &amp;_list {<br/>      display: none;<br/>    }<br/>    &amp;_content, &amp;_contentTitle {<br/>      display: block;<br/>    }<br/>  }<br/>}"
       },
       {
         name: "JS",
-        content: "JS..."
+        code: "export default (el) =&gt; {<br/>  'use strict';<br/><br/>  const $el = document.getElementById(el);<br/><br/>  // if no element found imediately return<br/>  if (!$el) return;<br/><br/>  // Store list of DOM elements we will need access to<br/>  const $tabLinks   = $el.querySelectorAll('.js-tabLink');<br/>  const $tabContent = $el.querySelectorAll('.js-tabContent');<br/>  let activeIndex   = 0;<br/><br/>  // create the 'click' and 'keyup' event handlers<br/>  const handleEvent = (link, index) =&gt; {<br/>    link.addEventListener('click', (e) =&gt; {<br/>      e.preventDefault();<br/>      openTabClick(index, e);<br/>    });<br/>    link.addEventListener('keyup', (e) =&gt; {<br/>      e.preventDefault();<br/>      openTabFocus(index, e);<br/>    });<br/>  }<br/><br/>  // OpenTab Click function<br/>  const openTabClick = index =&gt; {<br/>    if(index !== activeIndex &amp;&amp; index &gt;= 0 &amp;&amp; index &lt;= $tabLinks.length) {<br/>      closeActiveTab();<br/>      setActiveTab(index);<br/>      console.log(index);<br/>      activeIndex = index;<br/>    }<br/>  };<br/><br/>  // OpenTab Focus function<br/>  const openTabFocus = (index, e) =&gt; {<br/>    let newNo = -1,<br/>        count = $tabLinks.length;<br/><br/>    const maxNo = $tabLinks.length - 1;<br/><br/>    if (e.keyCode === 37 || e.keyCode === 40) { // left and down arrow<br/>      newNo = (index === 0) ? maxNo : index - 1;<br/>      console.log(newNo);<br/>    }<br/>    if (e.keyCode === 39 || e.keyCode === 38) { // right and up arrow<br/>      newNo = (index === maxNo) ? 0 : index + 1;<br/>      console.log(newNo);<br/>    }<br/><br/>    if (newNo &gt; -1) {<br/>      closeActiveTab();<br/>      setActiveTab(newNo);<br/>      activeIndex = newNo;<br/>      $tabLinks[newNo].focus();<br/>    }<br/>  };<br/><br/>  // Function to handle the closing of the current tab<br/>  const closeActiveTab = () =&gt; {<br/>    $tabLinks[activeIndex].classList.remove('isActive');<br/>    $tabLinks[activeIndex].setAttribute('aria-selected', false);<br/>    $tabLinks[activeIndex].setAttribute('tabindex', '-1');<br/><br/>    $tabContent[activeIndex].classList.remove('isActive');<br/>    $tabContent[activeIndex].setAttribute('aria-hidden', true);<br/>  };<br/><br/>  // Function to handle to opening of the new tab<br/>  const setActiveTab = index =&gt; {<br/>    $tabLinks[index].classList.add('isActive');<br/>    $tabLinks[index].setAttribute('aria-selected', true);<br/>    $tabLinks[index].setAttribute('tabindex', '0');<br/><br/>    $tabContent[index].classList.add('isActive');<br/>    $tabContent[index].removeAttribute('aria-hidden');<br/>  };<br/><br/>  // The returned function to kick things off<br/>  return function() {<br/>    $tabLinks.forEach((link, index) =&gt; {<br/>      handleEvent(link, index);<br/>    });<br/>  };<br/><br/>}"
       }
     ]
   )}}
